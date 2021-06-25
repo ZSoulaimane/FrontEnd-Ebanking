@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div>
+  <mat-card>
+    <mat-card-content class="padd">
+      <mat-grid-list cols="2" rowHeight="9:1" [gutterSize]="'20px'">
+
+        <mat-grid-tile class="sep"  colspan="2" rowspan="3">
+            <mat-label class="s">Choisir le service souhaité</mat-label>
+            <mat-select placeholder="Services offerts" appearence="outline" (selectionChange)="selectedValue($event)">
+              <mat-option value="Ouverture un compte personnel">Ouverture un compte personnel</mat-option>
+              <mat-option value="Clôture du compte bancaire">Clôture du compte bancaire</mat-option>
+              <mat-option value="Le relevé de compte mensuel">Le relevé de compte mensuel</mat-option>
+              <mat-option value="La fourniture d'un RIB">La fourniture d'un RIB</mat-option>
+              <mat-option value="Paiement de factures" >Paiement de factures</mat-option>
+              <mat-option value="Paiement par prélèvement ou virement bancaire">Paiement par prélèvement ou virement bancaire</mat-option>
+              <mat-option value="Service bancaire par téléphone ou par Internet">Service bancaire par téléphone ou par Internet</mat-option>
+            </mat-select>
+          </mat-grid-tile>
+
+         
+         <mat-grid-tile class="sep" colspan="2" rowspan="3">
+              <input matInput [min]="todayDate" [matDatepickerFilter]="bookedFilter" [matDatepicker]="picker" class="a"/>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+          </mat-grid-tile> 
+          
+
+          <mat-grid-tile colspan="2" rowspan="3">
+            <div class="rdv" fxFlex fxLayoutAlign="flex-end">
+              <button (click)="book()" mat-raised-button color="primary">
+                Valider votre rendez-vous
+              </button>
+            </div>
+          </mat-grid-tile>
+
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>
+</div>

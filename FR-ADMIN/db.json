@@ -1,0 +1,48 @@
+{
+	"agencies": [
+		{
+			"id": 1,
+			"nom": "Agence A",
+			"telephone": "0512345678",
+			"adresse": "123 Bd. Med V",
+			"email": "agenceA@email.com",
+			"ville": "Casa"
+		},
+		{
+			"id": 2,
+			"nom": "Agence B",
+			"telephone": "0512345678",
+			"adresse": "123 Bd. Med V",
+			"email": "agenceB@email.com",
+			"ville": "Marrakech"
+		},
+		{
+			"id": 3,
+			"nom": "Agence C",
+			"telephone": "0512345678",
+			"adresse": "123 Bd. Med V",
+			"email": "agenceC@email.com",
+			"ville": "Rabat"
+		},
+		{
+			"id": 4,
+			"nom": "Agence D",
+			"telephone": "0512345678",
+			"adresse": "123 Bd. Med V",
+			"email": "agenceD@email.com",
+			"ville": "Casa"
+		}
+	],
+	"admin": [
+		{
+			"id": 1,
+			"email": "admin@admin.com",
+			"password": "admin"
+		},
+		{
+			"email": "aymane@gmail.com",
+			"password": "root",
+			"id": 8
+		}
+	]
+}

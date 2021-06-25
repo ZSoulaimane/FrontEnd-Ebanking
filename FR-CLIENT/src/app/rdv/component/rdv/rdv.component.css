@@ -1,0 +1,52 @@
+.example-form-field {
+    margin-right: 20px;
+  }
+.sep{
+  border-bottom: solid 1px #808080;
+}
+.col{
+  background-color: beige;
+
+}
+.padd{
+  padding: 20px;
+  margin: 10px;
+}
+mat-card{
+  max-width: 500px;
+  margin: 2em auto;
+  text-align: center;
+  max-height: 680px;
+}
+.s{
+  font-size: 15px;
+  margin-right: auto;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+.a{
+    height: 30px;
+    width: 250px;
+    border-color: #E3E3E3;
+    border-radius: 2pt;
+}
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  margin: 1em;
+}
+
+.mat-card {
+  padding: 0;
+  max-width: 600px;
+  margin: 3rem auto;
+}

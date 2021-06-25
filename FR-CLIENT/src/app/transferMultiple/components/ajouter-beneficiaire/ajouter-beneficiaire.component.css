@@ -1,0 +1,87 @@
+html,
+body,
+blockquote,
+code,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre {
+  margin: 2px;
+  padding: 2px;
+}
+mat-card{
+  max-width: 500px;
+  margin: 2em auto;
+  text-align: center;
+  max-height: 680px;
+}
+.a{
+  block-size: auto;
+}
+.b{
+  block-size: auto;
+}
+#label{
+  text-align: center;
+  justify-content: center;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.background {
+  max-width: 500px;
+  margin: 2em auto;
+  text-align: center;
+  max-height: 680px;
+}
+
+.container {
+  padding: 2.5% 10%;
+  margin: 0 auto;
+}
+.whiteForm {
+  background-color: white;
+}
+mat-form-field {
+  width: 100%;
+  margin: 2.5%;
+}
+.envoyer {
+  padding: 2.5%;
+  margin-right: 160px;
+  margin-bottom:30px;
+  text-align: center;
+  justify-content: center;
+}
+
+
+table {
+  width: 100%;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.containertable {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+.blueButton {
+  background: #3f51b5;
+  color: white;
+  margin-right: 5px;
+}
+.importer {
+  color: #3f51b5;
+}
+.borderBottom {
+  border-bottom: 1px solid #dee2e6;
+}
+.fullheight {
+  height: 100%;
+}

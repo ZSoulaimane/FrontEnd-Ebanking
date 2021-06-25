@@ -1,0 +1,83 @@
+<app-header></app-header>
+<div class="bottomBorder">
+  <div class="container">
+    <mat-grid-list cols="2" rowHeight="16:1">
+      <mat-grid-tile class="fullheight">
+        <div fxFlex fxLayoutAlign="start center">
+          <button
+            mat-button
+            class="blueButton"
+            (click)="goToForm(idClient)">
+            Ajouter
+          </button>
+          <button mat-button class="blueButton" routerLink="/clients">
+            Revenir au clients
+          </button>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile class="fullheight">
+        <mat-form-field>
+          <mat-label>Filtre</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" />
+          <span class="material-icons" mat-button matSuffix mat-icon-button>
+            search
+          </span>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+<div class="container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="proprietaire">
+      <th mat-header-cell *matHeaderCellDef>Proprietaire</th>
+      <td mat-cell *matCellDef="let element">{{ element.proprietaire.nom }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="numero">
+      <th mat-header-cell *matHeaderCellDef>Numero du compte</th>
+      <td mat-cell *matCellDef="let element">{{ element.numero }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="solde">
+      <th mat-header-cell *matHeaderCellDef>Solde</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.solde | number: "1.2-2" }} {{ element.devise.code }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="warn" (click)="openDialog(element.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          color="primary"
+          (click)="goToOperations(element.id)"
+        >
+          <mat-icon>swap_horiz</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="getPDF(element.id)">
+          <mat-icon>get_app</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+</div>

@@ -1,0 +1,107 @@
+<app-navigation></app-navigation>
+<form [formGroup]="agentForm" (ngSubmit)="onSubmit()">
+	<div class="bottomBorder">
+		<div class="container">
+			<div *ngIf="error">{{ error }}</div>
+			<mat-grid-list cols="2" rowHeight="16:1">
+				<mat-grid-tile class="fullheight">
+					<div fxFlex fxLayoutAlign="start center">
+						<button
+							mat-flat-button
+							color="primary"
+							type="submit"
+							value="Valider"
+							[disabled]="!agentForm.valid"
+						>
+							Valider
+						</button>
+						<button mat-button class="yellowButton" type="reset">
+							Rénitialiser
+						</button>
+						<button
+							mat-flat-button
+							color="warn"
+							(click)="gotoAgentList()"
+						>
+							Annuler
+						</button>
+					</div>
+				</mat-grid-tile>
+			</mat-grid-list>
+		</div>
+	</div>
+
+	<div class="container content">
+		<mat-grid-list cols="2" rowHeight="6:1">
+			<mat-grid-tile>
+				<mat-form-field class="formField">
+					<mat-label>Nom</mat-label>
+					<input matInput type="text" formControlName="nom" />
+				</mat-form-field>
+			</mat-grid-tile>
+
+			<mat-grid-tile>
+				<mat-form-field class="formField">
+					<mat-label>Prenom</mat-label>
+					<input matInput type="text" formControlName="prenom" />
+				</mat-form-field>
+			</mat-grid-tile>
+
+			<mat-grid-tile>
+				<mat-form-field class="formField">
+					<mat-label>CIN</mat-label>
+					<input matInput type="text" formControlName="cin" />
+					<!-- <mat-error *ngIf="agentForm.controls.cin.errors.pattern">CIN invalide</mat-error> -->
+				</mat-form-field>
+			</mat-grid-tile>
+
+			<mat-grid-tile>
+				<mat-form-field class="formField">
+					<mat-label>Adresse</mat-label>
+					<input matInput type="text" formControlName="adresse" />
+				</mat-form-field>
+			</mat-grid-tile>
+
+			<mat-grid-tile>
+				<mat-form-field class="formField">
+					<mat-label>Telephone</mat-label>
+					<input
+						#input
+						matInput
+						type="text"
+						maxlength="10"
+						formControlName="telephone"
+					/>
+					<mat-hint align="end"
+						>{{ input.value?.length || 0 }}/10</mat-hint
+					>
+				</mat-form-field>
+			</mat-grid-tile>
+
+			<mat-grid-tile>
+				<mat-form-field class="formField">
+					<mat-label>Email</mat-label>
+					<input matInput type="text" formControlName="email" />
+				</mat-form-field>
+			</mat-grid-tile>
+
+			<mat-grid-tile>
+				<mat-form-field class="formField">
+					<mat-label>Username</mat-label>
+					<input matInput type="text" formControlName="username" />
+				</mat-form-field>
+			</mat-grid-tile>
+
+			<mat-grid-tile>
+				<mat-form-field class="formField">
+					<mat-label>Password</mat-label>
+					<input
+						matInput
+						type="password"
+						formControlName="password"
+					/>
+				</mat-form-field>
+			</mat-grid-tile>
+		</mat-grid-list>
+	</div>
+</form>

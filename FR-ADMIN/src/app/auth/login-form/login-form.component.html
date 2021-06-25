@@ -1,0 +1,40 @@
+<mat-card>
+	<mat-card-content>
+		<form [formGroup]="form" (ngSubmit)="checkLogin()">
+			<h2>Log In - Admin</h2>
+
+			<mat-error *ngIf="loginInvalid">
+				Username ou mot de passe non reconnu.
+			</mat-error>
+			<mat-icon>account_circle</mat-icon>
+			<mat-form-field class="full-width-input">
+				<input
+					matInput
+					placeholder="Username"
+					formControlName="username"
+					required
+				/>
+
+				<mat-error> Entrez un username s'il vous plait. </mat-error>
+			</mat-form-field>
+			<mat-form-field>
+				<input
+					matInput
+					placeholder="Password"
+					[type]="hide ? 'password' : 'text'"
+					formControlName="password"
+					required
+				/>
+				<mat-icon matSuffix (click)="hide = !hide">{{
+					hide ? "visibility_off" : "visibility"
+				}}</mat-icon>
+				<mat-hint *ngIf="!password.value"
+					>Entrez votre mot de passe</mat-hint
+				>
+				<mat-error> Entrez un mot de passe s'il vous plait. </mat-error>
+			</mat-form-field>
+
+			<button mat-raised-button color="primary">Login</button>
+		</form>
+	</mat-card-content>
+</mat-card>

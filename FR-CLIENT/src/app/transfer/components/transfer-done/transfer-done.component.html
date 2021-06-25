@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="background">
+  <div class="container">
+    <div class="whiteForm">
+      <mat-grid-list cols="2" rowHeight="6:1" [gutterSize]="'20px'">
+        <mat-grid-tile colspan="2" rowspan="3">
+          <mat-icon [ngStyle]="{ color: 'green' }" class="material-icons">
+            done
+          </mat-icon>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+          <h1>Virement effectué avec succes.</h1>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+          <button mat-raised-button color="primary" (click)="goToTransfers()">
+            Revenir au virements
+          </button>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+          <button mat-raised-button color="primary" routerLink="/overview">
+            Revenir au comptes
+          </button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div background>
+    <form [formGroup]="beneficiairesForm" (ngSubmit)="ajouterCompte()">
+    <div class="container">
+        <div class="whiteForm ">
+        <mat-grid-list cols="2" rowHeight="16:1" [gutterSize]="'20px'">
+            <mat-grid-tile colspan="2" rowspan="3">
+            <mat-form-field appearance="outline" class="a">
+                <mat-label>Beneficiaire</mat-label>
+                <mat-icon matPrefix class="icon-prefix-padding">person</mat-icon>
+                <input matInput type="text" placeholder="Entrer le numéro du beneficiaire" formControlName="numero" 
+                >
+                <mat-error *ngIf="accountNotFound">
+                Entrez un numero de compte valide.
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit"  >Ajouter</button>
+            </mat-grid-tile>
+        </mat-grid-list>
+        </div>
+    </div>
+    </form>
+</div>
+<div class="containertable">
+    <mat-label>Mes beneficiaires</mat-label>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="numero">
+        <th mat-header-cell *matHeaderCellDef>Numero de compte</th>
+        <td mat-cell *matCellDef="let element">{{ element.numero }}</td>
+    </ng-container>
+    <ng-container matColumnDef="devise">
+        <th mat-header-cell *matHeaderCellDef>Devise</th>
+        <td mat-cell *matCellDef="let element">{{ element.devise.code }}</td>
+    </ng-container>
+    <ng-container matColumnDef="proprietaire">
+        <th mat-header-cell *matHeaderCellDef>Proprietaire</th>
+        <td mat-cell *matCellDef="let element">{{ element.proprietaire.nom }} {{ element.proprietaire.prenom }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="supprimer">
+        <th mat-header-cell *matHeaderCellDef>Supprimer</th>
+        <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="warn" (click)="supprimerCompte(element.id)" >
+            <mat-icon>delete</mat-icon>
+        </button>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+</div>

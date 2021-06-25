@@ -1,0 +1,55 @@
+<app-header></app-header>
+<div class="background">
+  <div class="container">
+    <h1>Bonjour, {{ currentClientName }}</h1>
+
+    <div>
+      <mat-grid-list cols="1" rowHeight="3:1" [gutterSize]="'20px'">
+        <mat-grid-tile *ngFor="let account of accounts" class="singleAcc">
+          <div class="accountCont">
+            <h3><span class="blue">Numéro :</span> {{ account.numero }}</h3>
+            <h1 class="solde">
+              {{ account.solde | number: "1.2-2" }} {{ account.devise.code }}
+            </h1>
+            <h5 class="disponible">Disponible</h5>
+            <button
+              mat-raised-button
+              color="primary"
+              [routerLink]="['/compte', account.id, 'virements']"
+            >
+              Accéder au activités
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              [routerLink]="['/compte', account.id, 'virementForm']"
+            >
+              Faire un virement
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              [routerLink]="['/compte', account.id, 'virementMultiple','new']"
+            >
+              Faire un virement multiple
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              [routerLink]="['/compte', account.id, 'rdv']"
+            >
+              Prendre RDV
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              [routerLink]="['/compte', account.id, 'beneficiaires','new']"
+            >
+              Ajouter beneficiaires
+            </button>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+ul li {
+  list-style: none;
+}
+mat-toolbar {
+  padding: 0 10%;
+  margin: 0 auto;
+}

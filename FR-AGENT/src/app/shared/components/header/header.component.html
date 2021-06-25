@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span> E-Banki </span>
+    <div fxFlex fxLayout="row" fxLayoutAlign="center">
+      <button mat-button routerLink="/clients">
+        Clients
+      </button>
+       <button mat-button routerLink="/operator/all">
+        Operateurs
+      </button>
+      <button mat-button routerLink="/rdvs">
+        Rendez vous
+      </button>
+    </div>
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+      <ul fxLayout="row" fxLayoutGap="20px">
+        <li>
+          <button mat-button (click)="logOut()">
+            Sign out
+          </button>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

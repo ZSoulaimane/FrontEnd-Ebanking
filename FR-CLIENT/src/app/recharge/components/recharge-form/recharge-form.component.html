@@ -1,0 +1,60 @@
+<app-header></app-header>
+<div class="background">
+  <form [formGroup]="rechargeForm" (ngSubmit)="openDialog()">
+    <div class="container">
+      <div class="whiteForm">
+        <mat-grid-list cols="2" rowHeight="6:1" [gutterSize]="'20px'">
+          <mat-grid-tile>
+            <mat-form-field class="formField">
+              <mat-label>Opérateur</mat-label>
+              <mat-select disableRipple formControlName="operateur">
+                <mat-option
+                  *ngFor="let operator of operators"
+                  [value]="operator"
+                >
+                  {{ operator.nom }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field class="formField">
+              <mat-label>Somme de la recharge</mat-label>
+              <mat-select disableRipple formControlName="sommeEnv">
+                <mat-option [value]="10">10</mat-option>
+                <mat-option [value]="20">20</mat-option>
+                <mat-option [value]="50">50</mat-option>
+                <mat-option [value]="100">100</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field class="formField">
+              <mat-label>Envoyer à</mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="telephone"
+                placeholder="Numéro du téléphone"
+              />
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <h1>Votre solde actuel : {{ account1.solde | number: "1.2-2" }}</h1>
+          </mat-grid-tile>
+          <mat-grid-tile></mat-grid-tile>
+          <mat-grid-tile>
+            <div class="envoyer" fxFlex fxLayoutAlign="flex-end">
+              <button type="submit" mat-raised-button color="primary">
+                Envoyer
+              </button>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </form>
+</div>

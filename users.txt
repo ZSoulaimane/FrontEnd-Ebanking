@@ -1,0 +1,9 @@
+admin:admin
+
+AGENT
+aymane:aymane
+
+CLIENTS
+majid:majid
+john:john
+jane:jane

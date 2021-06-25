@@ -1,0 +1,20 @@
+.container {
+  padding: 2.5% 10%;
+  margin: 0 auto;
+}
+.background {
+  height: 100%;
+  background-color: #f5f7fa;
+}
+.content {
+  background-color: white;
+}
+table {
+  width: 100%;
+}
+.soustraction {
+  color: red;
+}
+.addition {
+  color: green;
+}
